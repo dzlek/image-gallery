@@ -45,6 +45,11 @@ header {
   overflow: hidden;
 }
 
+.grid_image {
+  width: 100%;
+  cursor: pointer;
+}
+
 footer {
   display: flex;
   flex-direction: row;

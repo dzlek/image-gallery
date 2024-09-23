@@ -13,11 +13,12 @@ async function getData(request) {
     const data = await response.json();
     grid.innerHTML = "";
     if (data.results.length === 0) grid.innerHTML = "<div> no results...</div>";
-    console.log(data);
+    input.innerText = request;
     data.results.map((result) => {
       createImage(result);
     });
   } catch (error) {
+    if (error) grid.innerHTML = "<div> error on API side ...</div>";
     console.error("Fetch error:", error);
   }
 }
@@ -25,8 +26,8 @@ async function getData(request) {
 getData("laos");
 
 function createImage(result) {
-  const img = document.createElement("img");
   const div = document.createElement("div");
+  const img = document.createElement("img");
   grid.appendChild(div);
   div.classList.add("grid_wrapper");
   div.appendChild(img);
