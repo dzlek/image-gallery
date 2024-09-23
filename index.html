@@ -8,16 +8,18 @@
   </head>
   <body>
     <h1>Image-gallery</h1>
-
     <header id="header">
-      <h2><i class="camera"></i> Image-gallery</h2>
-      <div id="search_box">
+      <h2>Image-gallery</h2>
+      <div class="search">
         <input
           id="input"
           type="text"
           placeholder="Search..."
           autocomplete="off"
-        /><i id="search" class="search"></i>
+        />
+        <span class="clear-button" id="clearButton" onclick="clearInput()"
+          >✖</span
+        >
       </div>
     </header>
     <section>

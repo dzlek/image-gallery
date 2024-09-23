@@ -1,6 +1,7 @@
 const KEY = "75WtYzlIo2JmB57Y0Y0N4E-zRTG_4x-VCz4TlI0-v4I";
 const grid = document.getElementById("grid");
 const input = document.getElementById("input");
+const clearButton = document.getElementById("clearButton");
 
 async function getData(request) {
   try {
@@ -14,6 +15,7 @@ async function getData(request) {
     grid.innerHTML = "";
     if (data.results.length === 0) grid.innerHTML = "<div> no results...</div>";
     input.innerText = request;
+    clearButton.style.display = input.value ? "block" : "none";
     data.results.map((result) => {
       createImage(result);
     });
@@ -36,9 +38,17 @@ function createImage(result) {
   img.alt = `image`;
 }
 
+function clearInput() {
+  input.value = "";
+  clearButton.style.display = "none";
+  input.focus();
+}
+
 input.addEventListener("change", (event) => {
   getData(event.target.value);
 });
+
+clearButton.addEventListener("click", clearInput);
 
 document.addEventListener("DOMContentLoaded", () => {
   if (input) {

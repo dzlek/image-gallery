@@ -22,6 +22,20 @@ header {
   margin-bottom: 16px;
 }
 
+.search {
+  position: relative;
+  display: inline-block;
+}
+
+.clear-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: none;
+}
+
 .grid {
   justify-content: space-between;
   display: grid;
