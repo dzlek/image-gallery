@@ -1,0 +1,12 @@
+{
+  "name": "image-gallery",
+  "version": "1.0.0",
+  "description": "learning project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "sass": "sass --watch ./styles/styles.scss ./styles/styles.css"
+  },
+  "author": "",
+  "license": "ISC"
+}
